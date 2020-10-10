@@ -3,7 +3,6 @@
 """
 Created on Sat Oct 10 19:14:15 2020
 
-@author: rabiyanoori
 """
 
 
