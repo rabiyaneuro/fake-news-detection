@@ -5,22 +5,9 @@ Created on Sat Oct 10 21:27:24 2020
 
 """
 
-
 import torch
 import torch.nn as nn
 from transformers import AutoModel
-
-# optimizer from hugging face transformers
-from transformers import AdamW
-
-
-RND = 2020
-
-# import BERT-base pretrained model
-bert = AutoModel.from_pretrained('bert-base-uncased')
-
-for param in bert.parameters():
-    param.requires_grad = False
 
 class BERT_Arch(nn.Module):
 
@@ -65,43 +52,16 @@ class BERT_Arch(nn.Module):
 
       return x
 
+
+# import BERT-base pretrained model
+bert = AutoModel.from_pretrained('bert-base-uncased')
+
+for param in bert.parameters():
+    param.requires_grad = False
+
 # pass the pre-trained BERT to our define architecture
 model = BERT_Arch(bert)
 
-# define the optimizer
-optimizer = AdamW(model.parameters(),
-                  lr = 1e-5)          # learning rate
-
-# define the loss function
-cross_entropy  = nn.NLLLoss()
-
-
 #load weights of best model
 model_state_file = 'saved_weights.pt'
-model.load_state_dict(torch.load(model_state_file))
-
-# # get predictions for a random peice of news
-
-# new_new = ["President Trump is a man"]
-
-# max_len = 512
-
-# # tokenize and encode sequences in the training set
-# tokens_new = tokenizer.batch_encode_plus(
-#     new_new,
-#     max_length = max_len,
-#     padding='max_length',
-#     truncation=True
-# )
-
-# # convert lists to tensors
-# new_seq = torch.tensor(tokens_new['input_ids'])
-# new_mask = torch.tensor(tokens_new['attention_mask'])
-
-# with torch.no_grad():
-#   new_preds = model(new_seq.to(device), new_mask.to(device)) #push to gpu
-#   new_preds = new_preds.detach().cpu().numpy()
-
-# np.argmax(new_preds, axis = 1)
-
-
+model.load_state_dict(torch.load(model_state_file, map_location=torch.device('cpu')))
