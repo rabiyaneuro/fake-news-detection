@@ -3,3 +3,5 @@
 model/__pycache__/bert.cpython-37.pyc
 model/saved_weights.pt
 *.pt
+*.npy
+*.hdf5
