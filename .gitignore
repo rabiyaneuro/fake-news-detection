@@ -2,3 +2,4 @@
 .DS_Store
 model/__pycache__/bert.cpython-37.pyc
 model/saved_weights.pt
+*.pt
