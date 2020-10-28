@@ -1,2 +1,1 @@
-# fake-news-detection
-DS4A Project
+# Fake News Detection
