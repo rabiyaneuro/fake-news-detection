@@ -22,9 +22,10 @@ This repository contains code for building a fake news detector. This project wa
 * External validation
 
 ## Results
-Please find our results in the following slides or our [project report](report/final_report.pdf).
 
-<iframe src="https://onedrive.live.com/embed?cid=807ED3EB316AB323&amp;resid=807ED3EB316AB323%211656&amp;authkey=AH3L-XXdyE_vaz4&amp;em=2&amp;wdAr=1.7777777777777777" width="595" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+Please find our results in our [project report](report/final_report.pdf) or click on the following image to view our slides.
+
+[![slides](images/slide.png)](https://onedrive.live.com/View.aspx?resid=807ED3EB316AB323!1656&wdSlideId=256&wdModeSwitchTime=1603933074942&authkey=!AH3L-XXdyE_vaz4)
 
 ## Authors
 Iris Yoon  
